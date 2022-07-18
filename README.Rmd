@@ -1,0 +1,42 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# cetaceans `r emo::ji("dolphin")` `r emo::ji("whale")`
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+This data package contains a data set of cetaceans living in captivity in the USA, derived from a [Tidy Tuesday data set](https://github.com/rfordatascience/tidytuesday/tree/master/data/2018/2018-12-18).
+
+## Installation
+
+You can install the development version of cetaceans from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("hfrick/cetaceans")
+```
+
+## Example
+
+```{r example}
+library(cetaceans)
+library(survival)
+library(survminer)
+
+data("cetaceans")
+survfit(Surv(age, event) ~ born_in_captivity, data = cetaceans) %>% 
+  ggsurvplot()
+```
