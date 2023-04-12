@@ -16,8 +16,8 @@ You can install the development version of cetaceans from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("hfrick/cetaceans")
+# install.packages("pak")
+pak::pak("hfrick/cetaceans")
 ```
 
 ## Example
